@@ -16,6 +16,7 @@ mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
+const Cars = require('./models/cars.js');
 const PORT = 3000;
 // Middlewares
 app.use(morgan('dev'));     // Request logging for development
@@ -24,11 +25,15 @@ app.use(express.json());    // Parse JSON bodies
 
 // Routes
 
-app.get('/', async (freq, res) => {
+app.get('/', async (req, res) => {
     res.render('index.ejs');
 });
 
+// Post (add a new car)
 
+app.get('/cars/new', (req,res) => {
+    res.render('cars/new.ejs');
+});
 
 
 
