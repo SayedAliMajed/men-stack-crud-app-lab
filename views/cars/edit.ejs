@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edit <%= car.name %></title>
+</head>
+<body>
+    <a href="/cars/<%= car._id %>">Back to <%= car.name %> Details</a>
+    <h1>Edit <%= car.name %></h1>
+    <form action="/cars/<%= car._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= car.name %>" required />
+        <br />
+
+        <label for="brand">Brand:</label>
+        <input type="text" id="brand" name="brand" value="<%= car.brand %>" required />
+        <br />
+
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" value="<%= car.year %>" required />
+        <br />
+
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" value="<%= car.color %>" />
+        <br />
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description"><%= car.description %></textarea>
+        <br />
+
+        <label for="image">Upload a new image (optional):</label>
+        <input type="file" id="image" name="image" accept="image/*" />
+        <br />
+
+        <button type="submit">Update Car</button>
+    </form>
+</body>
+</html>
