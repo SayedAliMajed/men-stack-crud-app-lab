@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <a href="/cars/">Back to Cars</a>
-
     <title>Create a Car</title>
 </head>
 <body>
-    <h1> Add Car Details</h1>
-    <form action="/cars" method="post">
-
-        <label for="name"> Name: </label>
+    <a href="/cars/">Back to Cars</a>
+    <h1>Add Car Details</h1>
+    <form action="/cars" method="POST" enctype="multipart/form-data">
+        <label for="name">Name:</label>
         <input type="text" name="name" id="name" required/>
         <br/>
-        <label for="brand"> Brand: </label>
+
+        <label for="brand">Brand:</label>
         <input type="text" name="brand" id="brand" required/>
         <br/>
-        <label for="year"> Year: </label>
+
+        <label for="year">Year:</label>
         <input type="number" name="year" id="year" required/>
         <br/>
-        <label for="color"> Color: </label>
+
+        <label for="color">Color:</label>
         <input type="text" name="color" id="color"/>
         <br/>
-        <label for="image"> Upload car image</label>
+
+        <label for="image">Upload car image:</label>
         <input type="file" name="image" id="image" accept="image/*" />
-        <label for="description"> Description:</label>
+        <br/>
+
+        <label for="description">Description:</label>
         <textarea name="description" id="description"></textarea>
         <br/>
 
