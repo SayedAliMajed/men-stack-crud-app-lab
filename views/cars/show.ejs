@@ -17,5 +17,27 @@
     <% } else { %>
         <p>No image available</p>
     <% } %>
+
+    <!-- Delete form -->
+    <form
+        class="delete-form"
+        action="/cars/<%= car._id %>?_method=DELETE"
+        method="POST"
+        onsubmit="return confirm('Are you sure you want to delete <%= car.name %>?');"
+    >
+        <button class="delete-button" type="submit">
+            Delete <%= car.name %>
+        </button>
+    </form>
+
+    <!-- Edit link -->
+    <a class="edit-link" href="/cars/<%= car._id %>/edit">
+        <div class="edit-text">Edit <%= car.name %></div>
+    </a>
+
+    <br/>
+    <a class="cars-index-link" href="/cars">
+        <div class="index-link-text">Back to Cars</div>
+    </a>
 </body>
 </html>

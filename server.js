@@ -78,12 +78,11 @@ app.get('/cars/:carId', async (req, res) => {
   res.render('cars/show.ejs', { car: foundCar });
 });
 
-app.delete('/cars/:carId', async (req,res) => {
+// Delete car
+app.delete('/cars/:carId', async (req, res) => {
   await Cars.findByIdAndDelete(req.params.carId);
   res.redirect('/cars');
-
 });
-
 
 
 
